@@ -15,9 +15,17 @@ app.listen(port, ()=>{
 //     console.log("Resived respont")
 // });
 
-app.get("/apple", (req, res)=>{
-    // console.log("Requested for the apple");'
-
-    res.send("you have requested for the apple  ");
+app.get("/:username", (req, res)=>{
+    // console.log("Requested for the apple");
+    // console.log(req.params);
+    let {username } = req.params;
+    // console.log(`welcome @${username}`)
+    res.send(`welcome @${username}`);
 });
+
+app.post("/",(req , res)=>{
+    console.log("uou have requested for the pass");
+});
+
+
 
